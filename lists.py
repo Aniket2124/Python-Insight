@@ -3,7 +3,9 @@ myLeftovers = []
 
 
 def add(addValue):
+    # this code is to check if value is already in the list (myUniqueList) or not
     isExist = addValue in myUniqueList
+
     if isExist:
         myLeftovers.append(addValue)
         return False
