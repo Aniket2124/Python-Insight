@@ -1,4 +1,7 @@
+'''
+My Blog Link:- https://pythonimporting.blogspot.com/2021/04/how-to-use-openpyxl-library-in-python.html
 
+'''
 import openpyxl
 #import random
 from openpyxl import Workbook
@@ -25,6 +28,7 @@ for row in rows:
 
     # This command will set filter in sheet
 sheet.auto_filter.ref = "A1:F11"
+
 # Formulas for IF/OR condition
 sheet["F2"] = '=IF(OR(B2<35,C2<35,D2<35),"Fail","Pass")'
 sheet["F3"] = '=IF(OR(B3<35,C3<35,D3<35),"Fail","Pass")'
@@ -36,8 +40,10 @@ sheet["G2"] = "= VLOOKUP(A2:A5,A1:F5,6,0)"
 sheet["G3"] = "= VLOOKUP(A2:A5,A1:F5,6,0)"
 sheet["G4"] = "= VLOOKUP(A2:A5,A1:F5,6,0)"
 sheet["G5"] = "= VLOOKUP(A2:A5,A1:F5,6,0)"
+
 # Fill color
 sheet['A2'].fill = PatternFill(bgColor="ff7f50", fill_type="lightTrellis")
+
 # This will rename
 sheetname = "Aniket"
 sheet.title = sheetname
@@ -54,6 +60,7 @@ sheet["H2"] = "=COUNT(A1:G5)"
 sheet["H3"] = "=COUNTA(A1:G5)"
 # COUNTBLANK = counts only blank cells
 sheet["H4"] = "=COUNTBLANK(A1:G5)"
+
 #
 #
 #
@@ -67,7 +74,10 @@ data_bar_rule = DataBarRule(
     start_type="num", start_value=35, end_type="num", end_value=99, color=Color.green)
 sheet.conditional_formatting.add("B2:D5", data_bar_rule)
 '''
+
 wb.save(filename="demon.xlsx")
+
+
 # To Calculate Total
 
 
@@ -91,6 +101,7 @@ for row in sheet.iter_rows(min_row=8,
         cell.value = random.randrange(5, 100)
 
     '''
+
 # Adding Barchart to sheet on record in sheet
 chart = BarChart3D()
 data = Reference(worksheet=sheet,
@@ -101,11 +112,11 @@ data = Reference(worksheet=sheet,
 
 chart.add_data(data, titles_from_data=True)
 chart.title = " MARKS "
-sheet.add_chart(chart, "J2")
+sheet.add_chart(chart, "J10")
 wb.save(filename="demon.xlsx")
 
-# Adding PIEchart
 
+# Adding PIEchart
 
 chart = PieChart3D()
 data = Reference(worksheet=sheet,
@@ -147,3 +158,9 @@ max_row = sheet.max_row
 for j in range(1, max_row+1):
     cell = sheet.cell(row=j, column=1)
     print("Printing Rows", cell.value)
+
+
+'''
+My Blog Link:- https://pythonimporting.blogspot.com/2021/04/how-to-use-openpyxl-library-in-python.html
+
+'''
