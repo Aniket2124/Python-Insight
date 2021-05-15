@@ -65,6 +65,7 @@ for i in range(star, 0, -1):
         print('*', end="")
     print('')
 '''
+'''
 n = input("enter a number\n")
 if int(n) % 2 == 1:
     print("Weird")
@@ -85,3 +86,68 @@ print(a-b)
 print(a*b)
 # print(int(a/b))
 # print(float(a/b))
+
+'''
+'''
+Q.Write a Python program to count the number of even and odd numbers from a series of numbers. Go to the editor
+Sample numbers : numbers = (1, 2, 3, 4, 5, 6, 7, 8, 9) 
+Expected Output :
+Number of even numbers : 5
+Number of odd numbers : 4
+'''
+
+even_no = []
+odd_no = []
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+for number in numbers:
+    if number % 2 == 0:
+
+        even_no.append(number)
+    else:
+        odd_no.append(number)
+
+print("Number of even numbers :", len(even_no))
+print("Number of odd numbers :", len(odd_no))
+
+
+'''
+Write a Python program that prints each item and its corresponding type from the following list.
+Sample List : datalist = [1452, 11.23, 1+2j, True, 'w3resource', (0, -1), [5, 12], {"class":'V', "section":'A'}]
+
+'''
+
+datalist = [1452, 11.23, 1+2j, True, 'w3resource', (0, -1), [5, 12],
+            {"class": 'V', "section": 'A'}]
+for item in datalist:
+    print("Type of", item, "is", type(item))
+'''
+Write a Python program that prints all the numbers from 0 to 6 except 3 and 6.
+Note : Use 'continue' statement.
+Expected Output : 0 1 2 4 5
+'''
+#num = [0, 1, 2, 3, 4, 5, 6]
+for i in range(6):
+    if(i == 3 or i == 6):
+        continue
+    print(i)
+
+print("\n")
+'''
+ Write a Python program to get the Fibonacci series between 0 to 50. 
+Note : The Fibonacci Sequence is the series of numbers :
+0, 1, 1, 2, 3, 5, 8, 13, 21, ....
+Every next number is found by adding up the two numbers before it.
+Expected Output : 1 1 2 3 5 8 13 21 34
+'''
+fibancciNo1 = 0
+fibancciNo2 = 1
+fibancciArray = []
+fibancciArray.append(fibancciNo1)
+fibancciArray.append(fibancciNo2)
+for num in range(8):
+    fibancciNo3 = fibancciNo1+fibancciNo2
+    fibancciArray.append(fibancciNo3)
+    fibancciNo1 = fibancciNo2
+    fibancciNo2 = fibancciNo3
+
+print(fibancciArray)
